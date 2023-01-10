@@ -39,6 +39,8 @@
   "author": "Google LLC",
   "license": "BSD-3-Clause",
   "dependencies": {
+    
+    "@dreamworld/dw-list-item": "^4.1.0",
     "lit": "^2.2.4"
   },
   "devDependencies": {

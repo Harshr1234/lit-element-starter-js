@@ -5,6 +5,9 @@
  */
 
 import {LitElement, html, css} from 'lit';
+import "@dreamworld/dw-surface"
+
+
 
 /**
  * An example element.
@@ -19,56 +22,175 @@ export class MyElement extends LitElement {
       :host {
         display: block;
         border: solid 1px gray;
-        padding: 16px;
-        max-width: 800px;
+        max-width: 100%;
+        margin: 0px;
+        height: 100vh;
+        background-color: #0000ff2e;
+      
       }
+      header{
+        display: flex;
+        background-color: #00bcd4;
+        height: 70px;
+        width: 100%;
+        color: white;
+        text-align: left;
+        font-size: 25px;
+        align-items: center;
+        overflow:hidden;
+      }
+
+      .body {
+        display: flex;
+        
+      }
+
+      .navigation {
+        display: flex;
+        height: 100vh;
+        width: 260px;
+        text-align: center;
+        background-color: black;
+        color: #ffffffab;
+        padding: 40px;
+        flex-direction: column;
+        }
+   
+
+      .sub-header {
+        display: flex;
+        height: 70px;
+        width: 100%;
+        background-color: #fbf6f6;
+        color: black;
+        font-size: 30px;
+        flex-direction: column;
+        align-items: center;
+        flex-direction: row;
+        
+      }
+
+      dw-icon {
+        --dw-icon-color:#ffffffab;
+       }
+     .name {
+        flex: 1;
+        padding:70px;
+      }
+      .company{
+        padding:70px;
+      }
+      .laguage{
+      padding:20px;
+      }
+      .h1{
+        flex:1;
+        padding:20px;
+      }
+      .icon {
+        margin-right: 8px;
+        padding:12px;
+
+        
+      }
+      .icon dw-icon{
+        --dw-icon-color:black;
+        
+      }
+      .dw-icon{
+        display:flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+        .dw-list-item {
+        display: flex;
+        margin: 0;
+        margin-left: 18px;
+      }
+      .profile{
+        padding:20px;
+
+      }
+     .profile dw-icon{
+        --dw-icon-color:white;
+      }
+     
     `;
   }
 
   static get properties() {
     return {
-      /**
-       * The name to say "Hello" to.
-       * @type {string}
-       */
-      name: {type: String},
-
-      /**
-       * The number of times the button has been clicked.
-       * @type {number}
-       */
-      count: {type: Number},
+     
     };
   }
 
   constructor() {
     super();
-    this.name = 'World';
-    this.count = 0;
+ 
   }
 
   render() {
     return html`
-      <h1>${this.sayHello(this.name)}!</h1>
-      <button @click=${this._onClick} part="button">
-        Click Count: ${this.count}
-      </button>
-      <slot></slot>
+       <dw-surface class="header" elevation=6>
+        <header>
+      
+          <div class="company">hisab.co</div>
+          <div class="name">Arihant Enterprise</div>
+          <div class="laguage">English</div>
+          <div class="profile"> <dw-icon name="account_circle" iconFont="FILED" size="38" ></dw-icon></div>
+        
+        </header>
+        </dw-surface>
+        <div class="body">
+          <div class="navigation">
+         
+           <div class="dw-icon">
+            <mwc-icon name="home" iconFont="FILED"></mwc-icon >   
+            <dw-list-item title1="Home"></dw-list-item>
+          </div>
+           <div class="dw-icon">
+            <mwc-icon name="assignment" iconFont="FILED"></mwc-icon >   
+            <dw-list-item title1="Statement"></dw-list-item>
+          </div>
+           <div class="dw-icon">
+            <mwc-icon name="list_alt" iconFont="FILED"></mwc-icon > 
+             <dw-list-item title1="Invoices"></dw-list-item>
+            </div>
+           <div class="dw-icon">
+            <mwc-icon name="credit_card" iconFont="FILED"></mwc-icon >  
+            <dw-list-item title1="Pending transactions"></dw-list-item>
+          </div>
+
+           </div>
+            
+           
+           
+           <div class="sub-header">
+           
+          <div class="h1">Statement </div>
+          <div class="icon">
+            <dw-icon name="refresh" iconFont="FILED" size="28"></dw-icon> 
+           <dw-icon name="picture_as_pdf" iconFont="FILED" size="28"></dw-icon>
+          </div>
+         </div>
+       
+         </div>
+        
+        </div>
+     
+      </div>
+    
     `;
   }
 
-  _onClick() {
-    this.count++;
-    this.dispatchEvent(new CustomEvent('count-changed'));
-  }
-
+ 
   /**
    * Formats a greeting
    * @param name {string} The name to say "Hello" to
    * @returns {string} A greeting directed at `name`
    */
   sayHello(name) {
-    return `Hello, ${name}`;
+    return 
   }
 }
 
