@@ -114,7 +114,84 @@ export class MyElement extends LitElement {
      .profile dw-icon{
         --dw-icon-color:white;
       }
+      dw-surface{
+        display:flex;
+        height: 262px;
+        width: 400px;
+       // margin: 24px 0px 0px 24px;
+        margin-top:10px;
+        border-radius:5px;
+      }
      
+      .s1{
+        display:flex;
+        flex-wrap:wrap;
+        position:sticky;
+        z-index:1;
+        margin-left:24px;
+      }
+      .s10{
+        display:flex;
+        flex-wrap:wrap;
+        position:sticky;
+        z-index:1;
+      }
+    
+      .s10{
+        margin-left:16px;
+      }
+      .s2{
+        position:sticky;
+        display:flex;
+        margin-left:16px;
+        margin-top:20px;
+        font-size:16px;
+        position:sticky;
+        z-index:1;
+      }
+      .s3{
+       display:flex;
+       flex:1;
+       flex-direction:row;
+      
+      }
+      .s4{
+        display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+   
+    margin-left:17px;
+    margin-bottom:50px;
+      }
+     .s5{
+      display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+    font-size:20px;
+    margin-left:50px;
+}
+.s6{
+      display: flex;
+    align-items: center;
+    margin-bottom: 38px;
+    font-size:20px;
+    margin-left:50px;
+}
+.s8{
+      display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size:20px;
+    margin-left:50px;
+}
+.s7{
+  display:block;
+  margin-top:16px;
+}
+.s9{
+  display: flex;
+  margin-left:17px;
+}
     `;
   }
 
@@ -131,7 +208,44 @@ export class MyElement extends LitElement {
 
   render() {
     return html`
-       <dw-surface class="header" elevation=6>
+    <div class="s2">MY COMPANINES</div>
+    <div class="s1">
+    <dw-surface elevation="4">
+      <div class="s7">
+      <div class="s4">Harsh test 1</div>
+      <div class="s5">: Professional plan</div>
+      <div class="s6">: Plan vaild till 31 oct</div>
+      <div class="s8">: Profile icon</div>
+      </div>
+    </dw-surface>
+    <div class="s10">
+    <dw-surface elevation="4">
+    </dw-surface>
+    
+   </div>
+  <div class="s10">
+    <dw-surface elevation="4">
+    </dw-surface>
+    
+   </div>
+    </div>
+
+    <div class="s2">SHARED WITH ME</div>
+    <!-- <div class="s1"> -->
+    <div class="s9">No Companies shared yet</div>
+    <!-- <dw-surface elevation="4">
+    <div class="s7">
+     
+      <div class="s5">: Editor</div>
+      <div class="s6">: Trial Plan</div>
+      <div class="s8">: Plan vaild till 31 oct</div>
+      </div>
+    </dw-surface>
+    <dw-surface elevation="4">
+    </dw-surface>
+    -->
+    <!-- </div> -->
+       <!-- <dw-surface class="header" elevation=6>
         <header>
       
           <div class="company">hisab.co</div>
@@ -178,7 +292,7 @@ export class MyElement extends LitElement {
         
         </div>
      
-      </div>
+      </div> -->
     
     `;
   }
